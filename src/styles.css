@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Pacifico';
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -20;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: bgFade 20s infinite;
+}
+
+@keyframes bgFade {
+  0%, 20% {
+    background-image: url('./assets/img/3.jpg');
+    opacity: 1;
+  }
+  25%, 45% {
+    background-image: url('./assets/img/2.jpg');
+  }
+  50%, 70% {
+    background-image: url('./assets/img/1.jpg');
+  }
+  75%, 95% {
+    background-image: url('./assets/img/4.jpg');
+  }
+  100% {
+    background-image: url('./assets/img/3.jpg');
+  }
+}
+
+#countdown-timer {
+    font-size: 8vw;
+    font-family: 'Lobster';
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url('./assets/img/background.gif');
+}
+
+#msg-title {
+    font-family: 'Bangers';
+}
+
+#sound {
+    background: red;
+    opacity: 0;
+}
+
+.message {
+  opacity: 0;
+  transform: translateY(-150px);
+  animation: overlay 5s 1;
+}
+
+@keyframes overlay {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Message Pour le Nouvel An</title>
+    <link rel="stylesheet" href="src/font.css">
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="./src/tailwindcss.js"></script>
+    <script src="src/time.js" defer></script>
+    <script src="src/CRUD.js" defer></script>
+    <script src="src/script.js" defer></script>
+</head>
+<body class="h-screen flex flex-col items-center justify-center p-6">
+
+    <img class="absolute left-5 top-5 w-48 -rotate-45" src="./src/assets/img/gril.webp" alt="" srcset="">
+    <img class="absolute bottom-1/2 right-10 w-28 rotate-10 -z-10" src="./src/assets/img/comment.gif" alt="" srcset="">
+    <img class="absolute bottom-5 right-10 w-28 -rotate-45 animate-bounce -z-10" src="./src/assets/img/calendar.webp" alt="" srcset="">
+    <img class="absolute bottom-14 left-10 w-28 -rotate-5 -z-10" src="./src/assets/img/tictac.gif" alt="" srcset="">
+    <img class="absolute bottom-0 left-30 w-36 -z-10" src="./src/assets/img//wait.gif" alt="" srcset="">
+
+    <audio id="sound" autoplay loop>
+      <source src="./src/assets/audio/tick-tock-clock-close-up.wav" type="audio/wav">
+    </audio>
+
+    <div id="time" class="">
+        <!-- Countdown -->
+        <div id="countdown" class="text-center mb-6">
+            <div class="text-sm text-gray-600">Tous les messages seront diffusés dans:</div>
+            <div id="countdown-timer"
+                class="mt-2 font-bold tracking-wide py-6"
+                aria-live="polite">
+                0j 00h 00min 00s
+            </div>
+        </div>
+    </div>
+
+  <div class="w-full max-w-xl relative" id="message-content">
+    <h1 id="msg-title" class="text-2xl font-bold mb-4 text-center text-amber-500">Envoyer des messages pour la fin d'année 🎉</h1>
+
+    <div id="saved" class="message bg-white/20 p-4 rounded shadow w-fit absolute top-0 left-1/4 -z-10">
+      <p id="saved-text" class="text-gray-800/30 whitespace-pre-wrap w-fit">Bonjour a tous!</p>
+    </div>
+
+    <form id="ny-form" class="bg-white/20 p-4 rounded-lg shadow">
+      <label for="message" class="sr-only">Nouvel An Message</label>
+      <input id="message" maxlength="500"
+        class="w-full border p-3 rounded resize-none focus:outline-none focus:ring bg-white/50"
+        placeholder="Ecrire votre message ici..." autocomplete="off"></input>
+
+      <div class="mt-3 flex gap-2">
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Envoyer</button>
+        <button type="button" id="clear" class="bg-gray-200 px-4 py-2 rounded">Effacer</button>
+      </div>
+    </form>
+
+    <div id="status" class="mt-3 text-sm text-gray-600"></div>
+
+  </div>
+</body>
+</html>
