@@ -13,7 +13,7 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
 
-  animation: bgFade 20s infinite;
+  animation: bgFade 80s infinite;
 }
 
 @keyframes bgFade {
@@ -56,7 +56,7 @@ body::before {
 .message {
   opacity: 0;
   transform: translateY(-150px);
-  animation: overlay 5s 1;
+  animation: overlay 15s 1;
 }
 
 @keyframes overlay {
@@ -64,8 +64,11 @@ body::before {
     transform: translateY(0px);
     opacity: 1;
   }
+  70% {
+    opacity: 0.8;
+  }
   100% {
-    transform: translateY(-150px);
+    transform: translateY(-400px);
     opacity: 0;
   }
 }

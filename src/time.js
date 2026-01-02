@@ -52,4 +52,4 @@ function startCountdown() {
 }
 
 /* ---------- Lancer ---------- */
-startCountdown();
+// startCountdown();

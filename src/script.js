@@ -11,19 +11,20 @@ var msgs = [];
 
 async function render() {
     msgs = await load();
+    msgs.reverse();
     console.log('msg obj: ', msgs);
     let timer = 3;
     msgs.map((e) => {
-        timer += 4;
         setTimeout(() => addMessage(e.text), timer * 1000);
+        timer += 4;
     });
 }
 
 function addMessage(msg) {
     const newSaved = document.createElement('div');
-    newSaved.className = 'message bg-white/20 p-4 rounded shadow w-fit absolute top-0 left-1/4 -z-10';
+    newSaved.className = 'message bg-white p-4 rounded shadow w-fit absolute bottom-0 left-1/4 z-10';
     const newSavedP = document.createElement('p');
-    newSavedP.className = 'text-gray-800/30 whitespace-pre-wrap w-fit';
+    newSavedP.className = 'text-gray-800 whitespace-pre-wrap w-fit';
     newSavedP.innerText = msg;
     newSaved.prepend(newSavedP);
     messageContent.prepend(newSaved);
